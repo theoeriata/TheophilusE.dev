@@ -94,18 +94,18 @@ params:
       url: "mailto:theophiluse@xiitechnologies.com"
     - name: GitHub
       url: "https://github.com/theoeriata"
-    - name: GitLab
-      url: "https://gitlab.com/theoeriata"
+    # - name: GitLab
+    #   url: "https://gitlab.com/theoeriata"
     - name: LinkedIn
       url: "https://linkedin.com/in/theophilus-eriata"
     - name: YouTube
       url: "https://www.youtube.com/@TheophilusEriata"
     - name: X
       url: "https://x.com/theoeriata"
-    - name: Itch.io
-      url: https://theophiluse.itch.io
-    - name: Google Scholar
-      url: https://scholar.google.com/citations?user=Theophilus+Eriata
+    # - name: Itch.io
+    #   url: https://theophiluse.itch.io
+    # - name: Google Scholar
+    #   url: https://scholar.google.com/citations?user=Theophilus+Eriata
 
   assets:
     disableScrollBarStyle: false
