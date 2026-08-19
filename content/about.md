@@ -1,24 +1,13 @@
-## Who I Am
+# About
 
-I’m Theophilus Eriata, a multidisciplinary engineer focused on building clear, deterministic systems across graphics, robotics, and high‑performance computing. I enjoy taking complex technical problems and shaping them into architectures that are elegant, maintainable, and grounded in first principles.
+I’m Theophilus Eriata, a software engineer who loves building systems that help people. My work lives at the intersection of graphics, robotics, and AI/ML, but the thread running through everything I do is simple: I’m drawn to problems where precision matters and where thoughtful engineering can make someone’s life easier, safer, or more connected.
 
-My work spans modern rendering pipelines, GPU‑accelerated simulation, real‑time control, and secure developer infrastructure. I care about systems that behave predictably, scale cleanly, and remain understandable long after they’re deployed. Good engineering, to me, is about creating environments where developers can build with confidence and where complexity never becomes an obstacle to clarity.
+I’ve always been curious about how things work, but even more curious about how people grow. That’s why mentoring students through FIRST Robotics, teaching at church, and helping build technical communities at the University of Calgary have become such meaningful parts of my life. I enjoy seeing people discover what they’re capable of, and I try to create environments where that discovery feels supported and encouraged.
 
-I’m completing my BSc in Computer Science with a concentration in theoretical computing and a minor in nanoscience. Alongside my academic work, I lead XII Technologies, where I design tooling, infrastructure, and early‑stage robotics systems and computational chemistry/physics solutions.
+Service has shaped me just as much as engineering. Volunteering with Alberta Health Services and the Mustard Seed taught me how powerful simple presence can be: listening, guiding, helping someone navigate a difficult moment. Those experiences grounded me and strengthened my desire to work in fields where technical skill and human care meet.
 
-I’m active in local technical communities, enjoy mentoring peers, and continually explore ways to make advanced systems more accessible, reproducible, and robust. At the core of everything I build is a simple principle: *engineering should empower people, not obscure their intent*.
+Faith gives me direction. Engineering gives me tools. Community gives me purpose. Together, they’ve shaped how I approach every project and every person, with patience, curiosity, and a commitment to building things that genuinely help.
 
-I’m happiest when I’m moving. In the summer, that usually means cycling, taking long rides, new routes, and a chance to think through ideas away from a screen.
+To summarize my core beliefs, *with sufficient discipline and tenacity, we can make impossibilities possible.*
 
-If you’re interested in collaborating, exploring research, or discussing technical architecture, I’m always open to connecting.
-
-Here’s a snapshot of the tools and domains I work with.
-
-| Area                       | Technologies & Skills                                                                                                                                                                |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Programming Languages**  | C/C++, Python, Java, C#, JavaScript, TypeScript, Haskell, Prolog                                                                                                                     |
-| **Systems**                | Windows, POSIX, Concurrency, Lock‑Free Programming, Parallel & Distributed Systems                                                                                                   |
-| **Compilers & Toolchains** | Lexing/Parsing, ASTs, Semantic Analysis, IRs, Data/Control‑Flow Analysis, Register Allocation, Instruction Selection, Code Generation, MIPS/x86‑64/Armv8‑A Assembly, LLVM/Clang, GCC |
-| **Graphics**               | Vulkan, Direct3D 11/12, OpenGL, GLSL, HLSL                                                                                                                                           |
-| **Tooling**                | CMake, Ninja, Git, GitHub/GitLab CI, Docker                                                                                                                                          |
-| **Debugging**              | RenderDoc, Nsight, PIX, perf, Valgrind, VTune, LLDB, GDB, Sanitizers, JUnit, pytest                                                                                                  |
+If you’d like to see what I’m working on, feel free to explore my projects or visit my blog.
