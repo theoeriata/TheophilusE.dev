@@ -157,13 +157,13 @@ B. Wang, K. Kostarelos, B. J. Nelson, and L. Zhang.
 _Trends in micro-/nanorobotics: materials development, actuation, localization, and system integration for biomedical applications._  
 Adv. Mater. 33 (2021), 2002047.
 
-[Yu et al., 2019]: https://doi.org/10.1038/s41467-019-13542-0
+[Yu et al., 2019]: https://doi.org/10.1038/s41467-019-13576-6
 
 J. Yu, D. Jin, K.-F. Chan, Q. Wang, K. Yuan, and L. Zhang.  
 _Active generation and magnetic actuation of microrobotic swarms in bio-fluids._  
 Nat. Commun. 10 (2019), 5631.
 
-[Li et al., 2024]: https://doi.org/10.3390/math12122180
+[Li et al., 2024]: https://doi.org/10.3390/math12142180
 
 Y. Li, Y. Huo, X. Chu, and L. Yang.  
 _Automated magnetic microrobot control: from mathematical modeling to machine learning._  
@@ -205,13 +205,13 @@ B. Yigit, Y. Alapan, and M. Sitti.
 _Programmable collective behavior in dynamically self-assembled mobile microrobotic swarms._  
 Adv. Sci. 6 (2019), 1801837.
 
-[Yan et al., 2024]: https://doi.org/10.1038/s44172-023-00107-5
+[Yan et al., 2024]: https://doi.org/10.1038/s44172-023-00145-5
 
 Y. Yan, C. Song, Z. Shen, et al.  
 _Programming structural and magnetic anisotropy for tailored interaction and control of soft microrobots._  
 Commun. Eng. 3 (2024), 7.
 
-[Richmond et al., 2023]: https://doi.org/10.1002/spe.3281
+[Richmond et al., 2023]: https://doi.org/10.1002/spe.3207
 
 P. Richmond, R. Chimeh, M. Sheridan, et al.  
 _FLAME GPU 2: a framework for flexible and performant agent based simulation on GPUs._  
@@ -224,7 +224,7 @@ _MASS CUDA: a general GPU parallelization framework for agent-based models._
 In: _Advances in Practical Applications of Agents, Multi-Agent Systems, and Complexity (PAAMS 2019)_,  
 LNCS 11523, Springer, pp. 139–152.
 
-[Guan & Balakrishna, 2025]: https://doi.org/10.1016/j.cpc.2024.109405
+[Guan & Balakrishna, 2025]: https://doi.org/10.1016/j.cpc.2026.110093
 
 H. Guan and A. R. Balakrishna.  
 _GPU-accelerated micromagnetic simulations with CuPyMag._  
