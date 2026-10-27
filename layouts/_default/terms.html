@@ -1,19 +1,14 @@
-{{- define "main" }}
-
-<header class="page-header">
-</header>
-
-<ul class="terms-tags">
-    {{- $type := .Type }}
-    {{- range $key, $value := .Data.Terms.Alphabetical }}
-    {{- $name := .Name }}
-    {{- $count := .Count }}
-    {{- with site.GetPage (printf "/%s/%s" $type $name) }}
-    <li>
-        <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
-    </li>
-    {{- end }}
-    {{- end }}
-</ul>
-
-{{- end }}
+{{ define "main" }}
+<section class="topics-page">
+    <header class="page-header">
+        <p class="section-label">Index of ideas</p>
+        <h1>Explore by topic.</h1>
+        <p class="page-description">Follow a subject across projects and technical writing.</p>
+    </header>
+    <ul class="terms-tags">
+        {{ range .Data.Terms.Alphabetical }}
+        <li><a href="{{ .Page.RelPermalink }}"><span>{{ .Page.Title }}</span><span class="term-count">{{ .Count }}<span class="sr-only"> entries</span></span></a></li>
+        {{ end }}
+    </ul>
+</section>
+{{ end }}

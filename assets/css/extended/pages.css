@@ -569,3 +569,8 @@
 .leadership-content h3 + p { padding-left: 22px; font: 12px var(--font-mono); color: var(--secondary); }
 .message-page { padding: 72px 0; }
 .message-page h1 { font-size: 48px; letter-spacing: -0.04em; margin: 16px 0 32px; }
+
+.supporting-page .main { max-width: calc(1100px + var(--gap) * 2); }
+.about-page { padding-left: 0; padding-right: 0; }
+.contact-page { padding-left: 0; padding-right: 0; }
+.contact-layout > div { min-width: 0; }
