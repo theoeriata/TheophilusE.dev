@@ -1,0 +1,8 @@
+{{ define "main" }}
+<section class="message-page">
+    <p class="section-label">Correspondence</p>
+    <h1>{{ .Title }}</h1>
+    <div class="post-content">{{ .Content }}</div>
+    <a class="btn-secondary" href="{{ site.Home.RelPermalink }}">Return home ↗</a>
+</section>
+{{ end }}
