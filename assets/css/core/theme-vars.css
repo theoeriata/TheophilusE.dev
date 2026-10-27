@@ -29,6 +29,7 @@
 
     /* ── Accent ── */
     --accent: #3656cf;
+    --accent-contrast: #ffffff;
     --accent-hover: #3d5ae0;
     --accent-muted: rgba(79, 110, 242, 0.10);
     --accent-border: rgba(79, 110, 242, 0.25);
@@ -84,6 +85,7 @@
     --content: #cccdd4;
 
     --accent: #93a6ff;
+    --accent-contrast: #101218;
     --accent-hover: #8099f7;
     --accent-muted: rgba(107, 132, 245, 0.12);
     --accent-border: rgba(107, 132, 245, 0.28);

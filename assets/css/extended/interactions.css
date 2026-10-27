@@ -3,38 +3,6 @@
    ============================================================================= */
 
 /* =============================================================================
-   SCROLL REVEAL
-   Elements gain .will-reveal (hidden) then .revealed (visible) via JS.
-   ============================================================================= */
-
-.will-reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition:
-    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.will-reveal.revealed {
-  opacity: 1;
-  transform: none;
-}
-
-/* Stagger helpers — apply via data-reveal-delay in templates */
-.will-reveal[data-reveal-delay="100"] { transition-delay: 0.1s; }
-.will-reveal[data-reveal-delay="200"] { transition-delay: 0.2s; }
-.will-reveal[data-reveal-delay="300"] { transition-delay: 0.3s; }
-.will-reveal[data-reveal-delay="400"] { transition-delay: 0.4s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .will-reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
-/* =============================================================================
    READING PROGRESS BAR
    A thin accent line fixed at the very top of the viewport.
    Rendered in blog/single.html; JS drives transform.

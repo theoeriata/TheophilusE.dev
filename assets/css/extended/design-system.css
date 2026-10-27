@@ -56,7 +56,7 @@ pre {
     z-index: 10000;
     padding: 8px 16px;
     background: var(--accent);
-    color: #fff;
+    color: var(--accent-contrast);
     border-radius: var(--radius);
     font-size: 14px;
     font-weight: 600;
@@ -147,35 +147,6 @@ body.dark #moon, body:not(.dark) #sun, .nav-toggle, #menu .mobile-utility { disp
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-/* ── Scroll to top ── */
-.top-link {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--primary);
-    color: var(--theme);
-    box-shadow: var(--shadow-md);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition-base), visibility var(--transition-base), transform var(--transition-fast);
-}
-
-.top-link:hover {
-    transform: translateY(-2px);
-}
-
-.top-link svg {
-    width: 12px;
-    height: 12px;
 }
 
 /* =============================================================================
@@ -698,40 +669,6 @@ body.list .main {
     margin: 0;
 }
 
-/* Copy code button */
-div.highlight,
-pre {
-    position: relative;
-}
-
-.copy-code {
-    display: none;
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    color: rgba(201, 209, 217, 0.7);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius-sm);
-    padding: 4px 10px;
-    font-size: 11px;
-    font-family: var(--font-mono);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    user-select: none;
-    cursor: pointer;
-    transition: background var(--transition-fast);
-}
-
-.copy-code:hover {
-    background: rgba(255, 255, 255, 0.14);
-}
-
-div.highlight:hover .copy-code,
-pre:hover .copy-code {
-    display: block;
-}
-
 /* ── TOC ── */
 .toc {
     margin: 0 0 32px;
@@ -908,165 +845,6 @@ a[href^="#fnref:"]:hover {
 }
 
 /* =============================================================================
-   PROFILE MODE — Homepage (kept for PaperMod compat but we override with index.html)
-   ============================================================================= */
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - var(--header-height) - var(--footer-height));
-    padding: 48px var(--gap);
-    text-align: center;
-    font-size: var(--homesize);
-}
-
-.profile .profile_inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    max-width: 640px;
-}
-
-.profile .profile_inner h1 {
-    font-size: clamp(28px, 5vw, 42px);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-}
-
-.profile img {
-    border-radius: 50%;
-    border: 2px solid var(--border);
-}
-
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 8px;
-}
-
-.button {
-    display: inline-flex;
-    align-items: center;
-    padding: 9px 18px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    background: var(--surface);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--primary);
-    text-decoration: none;
-    transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
-}
-
-.button:hover {
-    border-color: var(--accent-border);
-    background: var(--accent-muted);
-    color: var(--accent);
-}
-
-.button-inner {
-    display: contents;
-}
-
-/* =============================================================================
-   ARCHIVE
-   ============================================================================= */
-
-.archive-year {
-    margin-top: 40px;
-}
-
-.archive-year-header {
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--primary);
-    margin-bottom: 16px;
-}
-
-.archive-month-header {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--gray);
-    margin: 24px 0 8px;
-}
-
-.archive-entry {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-    text-decoration: none;
-    color: var(--content);
-    font-size: 14px;
-    transition: color var(--transition-fast);
-}
-
-.archive-entry:hover {
-    color: var(--accent);
-}
-
-.archive-entry-title {
-    flex: 1;
-}
-
-.archive-entry-date {
-    font-size: 12px;
-    color: var(--gray);
-    white-space: nowrap;
-    font-variant-numeric: tabular-nums;
-}
-
-/* =============================================================================
-   SEARCH
-   ============================================================================= */
-
-.search-page #searchbox {
-    position: relative;
-    margin-bottom: 24px;
-}
-
-#searchInput {
-    width: 100%;
-    padding: 12px 16px 12px 44px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-    color: var(--primary);
-    font-family: var(--font-sans);
-    font-size: 15px;
-    outline: none;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-#searchInput:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-muted);
-}
-
-/* =============================================================================
-   404 PAGE
-   ============================================================================= */
-
-.not-found {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - var(--header-height) - var(--footer-height));
-    text-align: center;
-    padding: var(--gap);
-}
-
-/* =============================================================================
    UTILITY CLASSES
    ============================================================================= */
 
@@ -1150,107 +928,6 @@ code {
     max-width: 100%;
 }
 
-
-/* =============================================================================
-   TAXONOMY / TAG CLOUD PAGE
-   ============================================================================= */
-
-.terms-tags {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.terms-tags li a {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--secondary);
-    text-decoration: none;
-    transition:
-        color var(--transition-fast),
-        border-color var(--transition-fast),
-        background var(--transition-fast);
-}
-
-.terms-tags li a:hover {
-    color: var(--accent);
-    border-color: var(--accent-border);
-    background: var(--accent-muted);
-}
-
-.terms-tags li a sup {
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--gray);
-    line-height: 1;
-}
-
-.terms-tags li a:hover sup {
-    color: var(--accent);
-}
-
-/* =============================================================================
-   404 PAGE
-   ============================================================================= */
-
-.not-found {
-    text-align: center;
-    padding: 120px var(--gap) 80px;
-    max-width: var(--main-width);
-    margin: 0 auto;
-}
-
-.not-found .not-found-code {
-    font-family: var(--font-mono);
-    font-size: clamp(64px, 15vw, 120px);
-    font-weight: 700;
-    letter-spacing: -0.06em;
-    color: var(--tertiary);
-    line-height: 1;
-    margin-bottom: 16px;
-}
-
-.not-found h1 {
-    font-size: clamp(20px, 3vw, 26px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: var(--primary);
-    margin: 0 0 12px;
-}
-
-.not-found p {
-    font-size: 16px;
-    color: var(--secondary);
-    line-height: 1.7;
-    margin: 0 0 32px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* =============================================================================
-   SEARCH PAGE
-   ============================================================================= */
-
-.search-page-header {
-    padding: 48px 0 32px;
-}
-
-#searchResults {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
 
 /* =============================================================================
    RESPONSIVE REFINEMENTS

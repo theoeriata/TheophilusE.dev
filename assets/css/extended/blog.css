@@ -203,3 +203,7 @@
     .reading-layout > .toc { grid-row: 1; position: static; max-height: 400px; }
     .reading-layout > .post-content { max-width: var(--main-width); margin: auto; }
 }
+
+.post-content figure > div { max-width: 100%; overflow-x: auto; }
+.post-breadcrumb > a { flex-shrink: 0; }
+.breadcrumb-current { min-width: 0; flex: 1; }
