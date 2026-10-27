@@ -81,6 +81,10 @@ params:
       url: "https://x.com/theoeriata"
 
   assets:
+    favicon: "favicon.ico?v=7cd09d03"
+    favicon16x16: "favicon-16x16.png?v=7cd09d03"
+    favicon32x32: "favicon-32x32.png?v=7cd09d03"
+    apple_touch_icon: "apple-touch-icon.png?v=7cd09d03"
     disableScrollBarStyle: false
     disableFingerprinting: false
 
