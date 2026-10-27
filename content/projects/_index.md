@@ -1,4 +1,4 @@
 ---
 title: "Projects"
-description: "Hands-on applications of theory and research—ranging from prototyped systems to experimental software and robotics demos. A showcase of real-world problem solving, technical creativity, and collaborative exploration."
+description: "Projects in graphics, simulation, robotics, and systems engineering that put theory and research into practice."
 ---

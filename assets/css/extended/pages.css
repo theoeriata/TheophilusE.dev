@@ -1,5 +1,5 @@
 /* =============================================================================
-   About, Leadership, Contact, Archive — supporting page styles
+   About, Leadership, Contact, Archive: supporting page styles
    ============================================================================= */
 
 /* =============================================================================
@@ -74,7 +74,7 @@
 }
 
 .about-content h1 {
-    display: none; /* Hide the "# About" heading — header handles it */
+    display: none; /* Hide the "# About" heading: header handles it */
 }
 
 .about-content p {

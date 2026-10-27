@@ -1,8 +1,8 @@
-/* post-single.css — article reading layout
+/* post-single.css: article reading layout
    Full redesign in extended/design-system.css.
    These stub rules prevent duplicate declarations while maintaining PaperMod compat. */
 
-/* Anchored headings — keep the .anchor hover behavior */
+/* Anchored headings: keep the .anchor hover behavior */
 h1:hover .anchor,
 h2:hover .anchor,
 h3:hover .anchor,

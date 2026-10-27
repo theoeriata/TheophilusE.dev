@@ -1,5 +1,5 @@
 /* =============================================================================
-   Extended Design System — TheophilusE.dev
+   Extended Design System: TheophilusE.dev
    Global typography, layout utilities, and component foundations.
    ============================================================================= */
 
@@ -74,7 +74,7 @@ pre {
 }
 
 /* =============================================================================
-   NAVIGATION — Redesigned header
+   NAVIGATION: Redesigned header
    ============================================================================= */
 
 /* Shared navigation. Mobile disclosure is enabled only once JS is running. */
@@ -107,7 +107,7 @@ body.dark #moon, body:not(.dark) #sun, .nav-toggle, #menu .mobile-utility { disp
 @media (max-width: 360px) { .logo a { gap: 8px; font-size: 12px; } .logo-switches { gap: 0; } }
 
 /* =============================================================================
-   FOOTER — Redesigned
+   FOOTER: Redesigned
    ============================================================================= */
 
 .footer {
@@ -250,7 +250,7 @@ body.list .main {
 }
 
 /* =============================================================================
-   POST ENTRIES — Cards
+   POST ENTRIES: Cards
    ============================================================================= */
 
 .post-entry {
@@ -337,7 +337,7 @@ body.list .main {
 }
 
 /* =============================================================================
-   POST SINGLE — Article reading layout
+   POST SINGLE: Article reading layout
    ============================================================================= */
 
 .post-header,

@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Site Configuration — Theophilus Eriata
+# Site Configuration: Theophilus Eriata
 # -----------------------------------------------------------------------------
 
 baseURL: "https://theophiluse.xiitechnologies.com/"
@@ -36,7 +36,7 @@ menu:
 
 params:
   author: "Theophilus Eriata"
-  description: "Software engineer working at the intersection of graphics programming, real-time simulation, robotics, and AI — University of Calgary."
+  description: "Graphics, simulation, robotics, and AI projects by Theophilus Eriata, a Computer Science student at the University of Calgary."
   googleAnalyticsID: "G-PVVE70X9RZ"
   DateFormat: "January 2, 2006"
 
@@ -64,7 +64,7 @@ params:
   # MainSections controls what appears in Archive and RSS
   MainSections: ["blog", "projects"]
 
-  # profileMode disabled — we use a custom layouts/index.html instead
+  # Profile mode is disabled because layouts/index.html provides the homepage.
   profileMode:
     enabled: false
 

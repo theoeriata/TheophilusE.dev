@@ -9362,7 +9362,7 @@ Examples do not need to be production-complete implementations when their purpos
 
 When evaluating competing designs, contributors and reviewers **SHOULD** ask:
 
-> Can a new contributor understand what this code owns, when it runs, what makes it fail, and which invariants it must preserve—without reading unrelated implementation files?
+> Can a new contributor understand what this code owns, when it runs, what makes it fail, and which invariants it must preserve without reading unrelated implementation files?
 
 A strong design should provide clear answers to the following questions:
 

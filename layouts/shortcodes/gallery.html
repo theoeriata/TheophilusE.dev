@@ -16,7 +16,7 @@
             {{- with $page.Resources.GetMatch (print $original.Name ".meta") -}}
                 {{- $meta = merge (.Content | transform.Unmarshal) $meta -}}
             {{- end -}}
-            {{- $alt := $meta.ImageDescription | default $meta.Title | default (printf "%s — screenshot %d" $page.Title (add $i 1)) -}}
+            {{- $alt := $meta.ImageDescription | default $meta.Title | default (printf "%s: screenshot %d" $page.Title (add $i 1)) -}}
             {{- $thumb := $original -}}
             {{- if ne $resize "original" -}}{{- $thumb = ($original.Filter images.AutoOrient).Fit $resize -}}{{- end -}}
             {{- $full := $original -}}

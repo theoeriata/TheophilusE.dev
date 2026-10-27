@@ -62,7 +62,7 @@
     </div>
 
 
-    {{- /* Footer — tags and nav */}}
+    {{- /* Footer: tags and nav */}}
     <footer class="post-footer project-footer">
         {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
         {{- with ($.GetTerms $tags) }}
