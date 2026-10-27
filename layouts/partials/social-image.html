@@ -1,0 +1,8 @@
+{{- $url := "images/social-preview.png" | absURL -}}
+{{- with partial "page-image.html" . -}}
+    {{- if reflect.IsImageResourceProcessable . -}}
+        {{- $preview := .Fit "1200x630 jpg q85" -}}
+        {{- $url = $preview.Permalink -}}
+    {{- end -}}
+{{- end -}}
+{{- return $url -}}

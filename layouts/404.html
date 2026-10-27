@@ -1,7 +1,11 @@
-{{ define "title" }}404{{ end }}
 {{ define "main" }}
-  <div class="not-found">
-    <h1>Page not found</h1>
-    <p>Sorry, the requested page could not be found.</p>
-  </div>
+<section class="message-page">
+    <p class="section-label">404 / Unmapped coordinates</p>
+    <h1>A path still to be found.</h1>
+    <p>The page may have moved, or the address may be incomplete.</p>
+    <div class="hero-actions">
+        <a class="btn-primary" href="{{ "search/" | relURL }}">Search the site</a>
+        <a class="btn-secondary" href="{{ "archive/" | relURL }}">Browse the archive</a>
+    </div>
+</section>
 {{ end }}

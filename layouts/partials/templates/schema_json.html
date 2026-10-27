@@ -1,20 +1,8 @@
-{{- /* schema_json.html — minimal safe structured data
-     Full schema disabled due to non-ASCII content in page bodies.
-     Basic WebSite and Person schema only. */}}
-{{ if .IsHome }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": {{ site.Title | jsonify }},
-  "url": {{ site.Home.Permalink | jsonify }},
-  "description": {{ site.Params.description | plainify | truncate 180 | jsonify }},
-  "author": {
-    "@type": "Person",
-    "name": {{ site.Params.author | jsonify }},
-    "url": {{ site.Home.Permalink | jsonify }}
-  }
-}
-</script>
+{{- $author := dict "@type" "Person" "name" site.Params.author "url" site.Home.Permalink -}}
+{{- $schema := dict "@context" "https://schema.org" "@type" "WebPage" "name" .Title "url" .Permalink "description" (.Description | default (.Summary | plainify) | default site.Params.description) -}}
+{{- if .IsHome -}}
+    {{- $schema = dict "@context" "https://schema.org" "@type" "WebSite" "name" site.Title "url" site.Home.Permalink "description" site.Params.description "author" $author -}}
+{{- else if and .IsPage (in site.Params.mainSections .Section) -}}
+    {{- $schema = merge $schema (dict "@type" "Article" "headline" .Title "author" $author "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00") "image" (partial "social-image.html" .) "mainEntityOfPage" .Permalink) -}}
 {{- end -}}
-
+<script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
