@@ -137,7 +137,7 @@
 }
 
 /* Featured card spans full width */
-.project-card--featured {
+.project-card.project-card--featured {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1.4fr 1fr;
@@ -282,7 +282,7 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    .project-card--featured {
+    .project-card.project-card--featured {
         grid-template-columns: 1fr;
     }
 

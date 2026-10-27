@@ -39,6 +39,13 @@
   });
   window.matchMedia('(min-width: 901px)').addEventListener('change', () => closeMenu());
 
+  const contents = document.querySelector('.toc details');
+  const wideReading = window.matchMedia('(min-width: 901px)');
+  if (contents) {
+    contents.open = wideReading.matches;
+    wideReading.addEventListener('change', event => { contents.open = event.matches; });
+  }
+
   const progress = document.getElementById('reading-progress');
   const article = document.querySelector('.post-single .post-content');
   const topLink = document.getElementById('scroll-to-top');

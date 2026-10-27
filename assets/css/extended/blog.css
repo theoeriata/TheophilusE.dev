@@ -198,7 +198,6 @@
 .post-content table { display: block; max-width: 100%; overflow-x: auto; }
 .post-content .katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
 .post-content :is(h2, h3, h4) { scroll-margin-top: 100px; }
-@media (min-width: 901px) { .reading-layout .toc details:not([open]) > .inner { display: block; } }
 @media (max-width: 900px) {
     .reading-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
     .reading-layout > .toc { grid-row: 1; position: static; max-height: 400px; }
