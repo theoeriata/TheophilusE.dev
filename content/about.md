@@ -5,8 +5,6 @@ layout: "about"
 hideMeta: true
 ---
 
-# About
-
 I'm Theophilus Eriata, a software engineer who builds systems where correctness and performance matter. My work sits at the intersection of graphics programming, real-time simulation, robotics, and AI — but the thread running through everything is simple: I'm drawn to problems where precision is not optional.
 
 I'm currently completing a Computer Science (Honours) degree at the University of Calgary, with focus areas in theoretical CS, graphics, and systems. Outside of coursework, I work on XII Engine — a cross-platform C++23 real-time engine — and on research connecting GPU-accelerated simulation to control problems in robotics and biomedical engineering.
