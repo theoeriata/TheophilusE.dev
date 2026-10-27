@@ -1,4 +1,9 @@
 ---
+featured: true
+featuredWeight: 4
+projectType: "Physical simulation"
+shortTitle: "Wave Formation MD"
+technologies: ["C++", "Molecular dynamics", "ImGui"]
 title: "XII: Wave Formation MD"
 date: 2025-03-02
 tags: ["Project", "C++", "Molecular Dynamics", "Simulation", "Physics"]

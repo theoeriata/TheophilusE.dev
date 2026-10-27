@@ -1,0 +1,11 @@
+{{- /* Resolve the authored cover before falling back to bundle imagery. */ -}}
+{{- $image := false -}}
+{{- with .Params.cover.image -}}
+    {{- $image = $.Resources.GetMatch . -}}
+{{- end -}}
+{{- if not $image -}}
+    {{- range slice "images/banner*" "images/*.png" "*.png" "*.jpg" "*.jpeg" "*.webp" -}}
+        {{- if not $image -}}{{- $image = $.Resources.GetMatch . -}}{{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- return $image -}}

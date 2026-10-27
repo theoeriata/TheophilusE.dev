@@ -1,0 +1,21 @@
+{{- $page := .page -}}
+{{- $image := partial "page-image.html" $page -}}
+{{- with $image -}}
+    {{- $alt := $page.Params.cover.alt | default $page.Title -}}
+    {{- if $.decorative -}}{{- $alt = "" -}}{{- end -}}
+    {{- if in (slice "jpeg" "png" "webp" "gif" "tiff" "bmp") .MediaType.SubType -}}
+        {{- $width := math.Min .Width 1200 | int -}}
+        {{- $src := .Resize (printf "%dx webp q82" $width) -}}
+        {{- $sources := slice -}}
+        {{- range slice 400 640 900 1200 -}}
+            {{- if lt . $width -}}
+                {{- $variant := $image.Resize (printf "%dx webp q82" .) -}}
+                {{- $sources = $sources | append (printf "%s %dw" $variant.RelPermalink .) -}}
+            {{- end -}}
+        {{- end -}}
+        {{- $sources = $sources | append (printf "%s %dw" $src.RelPermalink $width) -}}
+        <img src="{{ $src.RelPermalink }}" srcset="{{ delimit $sources ", " }}" sizes="{{ $.sizes | default "(min-width: 900px) 560px, 100vw" }}" width="{{ $src.Width }}" height="{{ $src.Height }}" alt="{{ $alt }}" loading="{{ $.loading | default "lazy" }}" decoding="async"{{ if eq $.loading "eager" }} fetchpriority="high"{{ end }}>
+    {{- else -}}
+        <img src="{{ .RelPermalink }}" alt="{{ $alt }}" loading="{{ $.loading | default "lazy" }}" decoding="async">
+    {{- end -}}
+{{- end -}}

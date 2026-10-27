@@ -1,0 +1,3 @@
+{{- $tags := .Params.technologies | default .Params.tags | default slice -}}
+{{- $tags = $tags | complement (slice "Project" "Blog") -}}
+{{- range first 4 $tags -}}<span class="tech-tag">{{ . }}</span>{{- end -}}

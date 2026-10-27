@@ -1,4 +1,6 @@
 ---
+featured: true
+featuredWeight: 3
 title: "Structure and Function: Rigorous Formalizations and Semantics"
 date: 2025-02-19
 

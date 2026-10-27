@@ -1,10 +1,15 @@
 ---
+featured: true
+featuredWeight: 2
+projectType: "Graphics programming"
+shortTitle: "CPU Ray Tracing"
+technologies: ["C++17", "Ray tracing", "Multithreading"]
 title: "CPU Ray Tracing"
 date: 2026-04-24
 tags: ["Project", "C++", "OpenGL", "Ray Tracing", "CPU Rendering", "Computer Graphics", "Multithreading", "Recursive Shading", "Geometry", "Rendering Engine"]
 author: ["Theophilus Eriata"]
 description: "A multithreaded interactive CPU ray tracer implementing analytic geometry, recursive reflections and refractions, Phong shading with shadows, and a responsive dual‑mode renderer with real‑time camera controls."
-summary: "A C++17 CPU ray tracer featuring pinhole‑camera ray generation, sphere/cylinder/triangle intersections, recursive lighting, Schlick Fresnel blending, shadow rays, async render worker, and interactive vs. full‑quality render modes. Rendering is performed on the GPU with OpenGL."
+summary: "A C++17 CPU ray tracer featuring pinhole‑camera ray generation, sphere/cylinder/triangle intersections, recursive lighting, Schlick Fresnel blending, shadow rays, async render worker, and interactive vs. full‑quality render modes. The CPU computes the image; OpenGL presents the result."
 cover:
     image: "images/banner.png"
     alt: "Game Banner."

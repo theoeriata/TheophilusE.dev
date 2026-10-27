@@ -1,4 +1,6 @@
 ---
+featured: true
+featuredWeight: 2
 title: "GPU-Accelerated Real-Time Control and Simulation of Magnetically Actuated Microbot Swarms for Targeted Drug Delivery."
 date: 2026-05-24
 

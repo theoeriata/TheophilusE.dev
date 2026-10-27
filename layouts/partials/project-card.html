@@ -1,0 +1,15 @@
+{{- $page := .page -}}
+<article class="project-card{{ if .featured }} project-card--featured{{ end }}">
+    {{- if partial "page-image.html" $page }}
+    <a href="{{ $page.RelPermalink }}" class="project-card-image" tabindex="-1" aria-hidden="true">
+        {{ partial "responsive-image.html" (dict "page" $page "decorative" true "sizes" "(min-width: 900px) 560px, (min-width: 600px) 45vw, 100vw") }}
+    </a>
+    {{- end }}
+    <div class="project-card-body">
+        <p class="section-label">{{ $page.Params.projectType | default "Engineering project" }}</p>
+        <h3 class="project-card-title"><a href="{{ $page.RelPermalink }}">{{ $page.Params.shortTitle | default $page.Title }}</a></h3>
+        <p class="project-card-description">{{ $page.Description | default ($page.Summary | plainify) }}</p>
+        <div class="project-card-meta">{{ partial "technology-labels.html" $page }}</div>
+        <div class="project-card-footer"><a href="{{ $page.RelPermalink }}" class="project-card-link" aria-label="Explore {{ $page.Title }}">Explore project <span aria-hidden="true">↗</span></a></div>
+    </div>
+</article>

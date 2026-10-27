@@ -1,4 +1,9 @@
 ---
+featured: true
+featuredWeight: 5
+projectType: "Computational geometry"
+shortTitle: "Curves & Surfaces"
+technologies: ["C++", "Tessellation", "Geometry"]
 title: "Curves, Surfaces, and Tessellation"
 date: 2026-03-24
 tags: ["Project", "C++", "OpenGL", "Computer Graphics", "Curves", "Surfaces", "Tessellation"]

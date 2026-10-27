@@ -78,62 +78,10 @@
         <a href="/projects/" class="section-link">All projects →</a>
     </header>
 
-    {{- /* Collect all projects, sort by date desc */}}
-    {{- $projects := where site.RegularPages "Section" "projects" }}
-    {{- $projects = $projects | first 6 }}
-
-    {{- /* Featured: show first project wide, rest in grid */}}
+    {{- $projects := where (where site.RegularPages "Section" "projects") "Params.featured" true }}
     <div class="projects-grid">
-        {{- range $i, $p := $projects }}
-        {{- $cover := $p.Resources.GetMatch "images/banner*" }}
-        {{- if not $cover }}{{- $cover = $p.Resources.GetMatch "images/*.png" }}{{- end }}
-        {{- if not $cover }}{{- $cover = $p.Resources.GetMatch "*.png" }}{{- end }}
-        {{- if not $cover }}{{- $cover = $p.Resources.GetMatch "*.jpg" }}{{- end }}
-
-        <article class="project-card{{ if eq $i 0 }} project-card--featured{{ end }}" data-reveal data-reveal-delay="{{ mul $i 100 }}">
-            {{- if $cover }}
-            <a href="{{ $p.Permalink }}" class="project-card-image" tabindex="-1" aria-hidden="true">
-                {{- $img := $cover.Resize "800x450 q85 Lanczos" }}
-                <img src="{{ $img.RelPermalink }}" alt="{{ $p.Params.cover.alt | default $p.Title }}" loading="lazy" width="{{ $img.Width }}" height="{{ $img.Height }}">
-            </a>
-            {{- else }}
-            <a href="{{ $p.Permalink }}" class="project-card-image project-card-image--placeholder" tabindex="-1" aria-hidden="true">
-                <div class="project-card-placeholder">
-                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40" aria-hidden="true">
-                        <rect x="8" y="8" width="44" height="44" rx="4" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
-                        <path d="M20 40 L30 28 L40 36 L45 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="40" cy="24" r="4" stroke="currentColor" stroke-width="1.5"/>
-                    </svg>
-                </div>
-            </a>
-            {{- end }}
-            <div class="project-card-body">
-                <div class="project-card-meta">
-                    {{- $tags := $p.Params.tags | default slice }}
-                    {{- $techTags := slice }}
-                    {{- range $tags }}
-                        {{- if not (in (slice "Project" "Blog") .) }}
-                            {{- $techTags = $techTags | append . }}
-                        {{- end }}
-                    {{- end }}
-                    {{- range first 4 $techTags }}
-                    <span class="tech-tag">{{ . }}</span>
-                    {{- end }}
-                </div>
-                <h3 class="project-card-title">
-                    <a href="{{ $p.Permalink }}">{{ $p.Title }}</a>
-                </h3>
-                <p class="project-card-description">{{ $p.Params.summary | default $p.Params.description | truncate 140 }}</p>
-                <div class="project-card-footer">
-                    <a href="{{ $p.Permalink }}" class="project-card-link">View project →</a>
-                    {{- with $p.Params.editPost.URL }}
-                    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="project-card-github" aria-label="GitHub repository">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    </a>
-                    {{- end }}
-                </div>
-            </div>
-        </article>
+        {{- range $i, $page := first 4 (sort $projects "Params.featuredWeight") }}
+            {{ partial "project-card.html" (dict "page" $page "featured" (eq $i 0)) }}
         {{- end }}
     </div>
 </section>
@@ -148,10 +96,7 @@
         <a href="/blog/" class="section-link">All articles →</a>
     </header>
 
-    {{- $posts := where site.RegularPages "Section" "blog" }}
-    {{- $posts = $posts.ByDate.Reverse }}
-    {{- /* Show top 4 posts by date */}}
-
+    {{- $posts := sort (where (where site.RegularPages "Section" "blog") "Params.featured" true) "Params.featuredWeight" }}
     <div class="writing-list">
         {{- range first 4 $posts }}
         <article class="writing-entry" data-reveal>
@@ -169,7 +114,7 @@
                 <h3 class="writing-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
                 <p class="writing-summary">{{ .Params.description | truncate 160 }}</p>
             </div>
-            <a href="{{ .Permalink }}" class="writing-arrow" aria-hidden="true">→</a>
+            <span class="writing-arrow" aria-hidden="true">↗</span>
         </article>
         {{- end }}
     </div>

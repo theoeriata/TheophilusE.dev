@@ -1,4 +1,9 @@
 ---
+featured: true
+featuredWeight: 6
+projectType: "Computer vision"
+shortTitle: "PoseSense"
+technologies: ["Python", "TypeScript", "Pose estimation"]
 title: "PoseSense: Real-Time Human Pose & Gesture Recognition"
 date: 2025-11-11
 tags: ["Project", "Machine Learning", "Computer Vision", "Real-Time Systems", "Python", "TypeScript"]

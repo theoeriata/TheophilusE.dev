@@ -1,4 +1,9 @@
 ---
+featured: true
+featuredWeight: 1
+projectType: "Engine architecture"
+shortTitle: "XII Engine"
+technologies: ["C++23", "Rendering", "Editor tooling"]
 title: "XII Engine"
 date: 2022-02-02
 tags: ["Project", "C++", "Game Engine", "Graphics", "Cross-Platform", "Real-time Rendering", "High-Performance"]

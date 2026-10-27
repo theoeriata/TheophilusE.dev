@@ -1,5 +1,7 @@
 
 ---
+featured: true
+featuredWeight: 4
 title: "XII Engine C++ Coding Standards and Engineering Guidelines"
 date: 2026-10-22
 tags: ["Project", "C++", "C++23", "Software Engineering", "Coding Standards", "Game Engine", "Cross-Platform", "High-Performance"]

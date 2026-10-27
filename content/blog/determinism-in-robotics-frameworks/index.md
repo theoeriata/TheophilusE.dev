@@ -1,4 +1,6 @@
 ---
+featured: true
+featuredWeight: 1
 title: "Designing for Determinism in Robotics Frameworks"
 date: 2025-09-11
 

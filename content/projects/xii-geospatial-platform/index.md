@@ -1,4 +1,9 @@
 ---
+featured: true
+featuredWeight: 3
+projectType: "Scientific visualization"
+shortTitle: "XII Geospatial Platform"
+technologies: ["C++", "Geospatial", "GPU textures"]
 title: "XII Geospatial Platform: Visualizing Economic Activity in Syria via Night Lights"
 date: 2023-02-18
 tags: ["Project", "Geospatial", "Visualization", "Night Lights", "Game Engine"]
