@@ -16,7 +16,7 @@
 {{- if eq site.Params.defaultTheme `dark` -}}
 {{- print " dark" }}
 {{- end -}}
-" id="top" data-code-copy="{{ .Param "ShowCodeCopyButtons" }}">
+{{ if and .IsPage (eq .Section "projects") }} project-page{{ end }}{{ if and .IsPage (eq .Section "blog") }} article-page{{ end }}" id="top" data-code-copy="{{ .Param "ShowCodeCopyButtons" }}">
     <a class="skip-link" href="#main-content">Skip to content</a>
     {{- partialCached "header.html" . .Page -}}
     <main class="main" id="main-content" tabindex="-1">

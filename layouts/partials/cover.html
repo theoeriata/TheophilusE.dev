@@ -1,0 +1,13 @@
+{{- if not .isHidden -}}
+{{- $page := .cxt -}}
+{{- if partial "page-image.html" $page -}}
+<figure class="entry-cover">
+    {{ partial "responsive-image.html" (dict "page" $page "loading" "eager" "sizes" "(min-width: 1100px) 1040px, 100vw") }}
+    {{ with $page.Params.cover.caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>
+{{- else -}}
+    {{- with $page.Params.cover.image -}}
+    <figure class="entry-cover"><img src="{{ . | absURL }}" alt="{{ $page.Params.cover.alt | default $page.Title }}" loading="eager"></figure>
+    {{- end -}}
+{{- end -}}
+{{- end -}}

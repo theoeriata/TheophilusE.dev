@@ -616,52 +616,6 @@
    HERO ENTRANCE ANIMATION
    ============================================================================= */
 
-@keyframes fadeSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(24px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-eyebrow {
-    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
-}
-
-.hero-name {
-    animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
-}
-
-.hero-tagline {
-    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
-}
-
-.hero-description {
-    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
-}
-
-.hero-actions {
-    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
-}
-
-.hero-motif {
-    animation: fadeSlideUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hero-eyebrow,
-    .hero-name,
-    .hero-tagline,
-    .hero-description,
-    .hero-actions,
-    .hero-motif {
-        animation: none;
-    }
-}
-
 /* =============================================================================
    WRITING SECTION REFINEMENTS
    ============================================================================= */
