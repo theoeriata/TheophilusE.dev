@@ -1,0 +1,183 @@
+/* =============================================================================
+   Blog — TheophilusE.dev
+   ============================================================================= */
+
+/* ── Blog Page Container ── */
+.blog-page {
+    max-width: var(--nav-width);
+    margin: 0 auto;
+    padding: 0 var(--gap);
+}
+
+.blog-page .page-header {
+    margin-bottom: 48px;
+}
+
+/* ── Blog List ── */
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 48px;
+}
+
+/* ── Blog Entry ── */
+.blog-entry {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    background: var(--theme);
+    transition: background var(--transition-fast);
+}
+
+.blog-entry:hover {
+    background: var(--surface);
+}
+
+.blog-entry-image {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--surface-raised);
+}
+
+.blog-entry-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+    border-radius: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+.blog-entry:hover .blog-entry-image img {
+    transform: scale(1.04);
+}
+
+.blog-entry-body {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blog-entry-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.blog-reading-time {
+    font-size: 12px;
+    color: var(--gray);
+}
+
+.blog-entry-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.blog-entry-title a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.blog-entry-title a:hover {
+    color: var(--accent);
+}
+
+.blog-entry-summary {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--secondary);
+    margin: 0;
+    flex: 1;
+}
+
+.blog-entry-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    align-self: flex-start;
+    transition: opacity var(--transition-fast);
+}
+
+.blog-entry-link:hover {
+    opacity: 0.75;
+}
+
+/* No image variant */
+.blog-entry:not(:has(.blog-entry-image)) {
+    grid-template-columns: 1fr;
+}
+
+@media (max-width: 720px) {
+    .blog-entry {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-entry-image {
+        aspect-ratio: 16 / 9;
+        max-height: 200px;
+    }
+
+    .blog-entry-body {
+        padding: 20px 20px;
+    }
+
+    .blog-entry-title {
+        font-size: 17px;
+    }
+}
+
+/* ── Blog Pagination ── */
+.pagination-info {
+    font-size: 13px;
+    color: var(--gray);
+    margin: 0 auto;
+}
+
+/* =============================================================================
+   Blog Single / Article Reading Layout
+   ============================================================================= */
+
+/* The post-single class is used; breadcrumb additions */
+.post-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 24px;
+    text-decoration: none;
+}
+
+.post-breadcrumb a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.post-breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.breadcrumb-current {
+    color: var(--secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 300px;
+}
+

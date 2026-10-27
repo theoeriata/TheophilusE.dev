@@ -1,0 +1,265 @@
+{{- define "main" }}
+
+{{- /* ════════════════════════════════════════════════════════════════════════
+     HERO
+     ════════════════════════════════════════════════════════════════════════ */}}
+<section class="home-hero" aria-labelledby="hero-name">
+
+    {{- /* Geometric motif — coordinate axes inspired by engineering diagrams */}}
+    <div class="hero-motif" aria-hidden="true">
+        <svg class="hero-svg" viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grid dots -->
+            <g class="motif-dots">
+                {{- range seq 0 7 }}{{- $x := mul . 48 }}
+                {{- range seq 0 5 }}{{- $y := mul . 48 }}
+                <circle cx="{{ add 32 $x }}" cy="{{ add 24 $y }}" r="1.5" fill="currentColor" opacity="0.18"/>
+                {{- end }}{{- end }}
+            </g>
+            <!-- Coordinate frame -->
+            <g class="motif-frame" stroke="currentColor" stroke-linecap="round">
+                <line x1="48" y1="232" x2="48" y2="72" stroke-opacity="0.35" stroke-width="1.5"/>
+                <line x1="48" y1="232" x2="208" y2="232" stroke-opacity="0.35" stroke-width="1.5"/>
+                <!-- Axis arrows -->
+                <polyline points="42,80 48,68 54,80" fill="none" stroke-opacity="0.35" stroke-width="1.5"/>
+                <polyline points="200,238 212,232 200,226" fill="none" stroke-opacity="0.35" stroke-width="1.5"/>
+                <!-- Axis labels -->
+                <text x="52" y="66" font-size="10" fill="currentColor" opacity="0.35" font-family="JetBrains Mono, monospace">y</text>
+                <text x="218" y="236" font-size="10" fill="currentColor" opacity="0.35" font-family="JetBrains Mono, monospace">x</text>
+            </g>
+            <!-- Sample data curve (rendering pipeline shaped) -->
+            <path class="motif-curve"
+                d="M 48 192 C 80 160, 120 140, 160 120 S 240 100, 280 72"
+                stroke="var(--accent)" stroke-width="1.5" stroke-opacity="0.6" stroke-dasharray="4 3"/>
+            <!-- Graph nodes -->
+            <g class="motif-nodes">
+                <circle cx="80"  cy="176" r="4" fill="var(--accent)" opacity="0.5"/>
+                <circle cx="130" cy="152" r="3" fill="var(--accent)" opacity="0.4"/>
+                <circle cx="180" cy="120" r="4" fill="var(--accent)" opacity="0.5"/>
+                <circle cx="240" cy="100" r="3" fill="var(--accent)" opacity="0.4"/>
+                <circle cx="280" cy="72"  r="5" fill="var(--accent)" opacity="0.65"/>
+            </g>
+            <!-- Edge connections -->
+            <g stroke="var(--accent)" stroke-width="1" stroke-opacity="0.25">
+                <line x1="80"  y1="176" x2="130" y2="152"/>
+                <line x1="130" y1="152" x2="180" y2="120"/>
+                <line x1="180" y1="120" x2="240" y2="100"/>
+                <line x1="240" y1="100" x2="280" y2="72"/>
+                <line x1="80"  y1="176" x2="180" y2="120"/>
+                <line x1="130" y1="152" x2="240" y2="100"/>
+            </g>
+        </svg>
+    </div>
+
+    <div class="hero-content">
+        <p class="hero-eyebrow section-label">Engineering &amp; Research</p>
+        <h1 class="hero-name" id="hero-name">Theophilus<br>Eriata</h1>
+        <p class="hero-tagline">Building systems where precision is not optional.</p>
+        <p class="hero-description">
+            I work at the intersection of graphics programming, real-time simulation,
+            robotics, and AI — from rendering pipeline internals to GPU-accelerated
+            physics and autonomous systems. I care about correctness, performance,
+            and the engineering decisions that make both possible.
+        </p>
+        <div class="hero-actions">
+            <a href="/projects/" class="btn-primary">Selected Work</a>
+            <a href="/blog/" class="btn-secondary">Technical Writing</a>
+            <a href="/contact/" class="btn-ghost">Get in Touch</a>
+        </div>
+    </div>
+</section>
+
+{{- /* ════════════════════════════════════════════════════════════════════════
+     FEATURED PROJECTS
+     ════════════════════════════════════════════════════════════════════════ */}}
+<section class="home-section home-projects" aria-labelledby="projects-heading">
+    <header class="home-section-header" data-reveal>
+        <p class="section-label">Engineering Work</p>
+        <h2 id="projects-heading" class="home-section-title">Selected Projects</h2>
+        <a href="/projects/" class="section-link">All projects →</a>
+    </header>
+
+    {{- /* Collect all projects, sort by date desc */}}
+    {{- $projects := where site.RegularPages "Section" "projects" }}
+    {{- $projects = $projects | first 6 }}
+
+    {{- /* Featured: show first project wide, rest in grid */}}
+    <div class="projects-grid">
+        {{- range $i, $p := $projects }}
+        {{- $cover := $p.Resources.GetMatch "images/banner*" }}
+        {{- if not $cover }}{{- $cover = $p.Resources.GetMatch "images/*.png" }}{{- end }}
+        {{- if not $cover }}{{- $cover = $p.Resources.GetMatch "*.png" }}{{- end }}
+        {{- if not $cover }}{{- $cover = $p.Resources.GetMatch "*.jpg" }}{{- end }}
+
+        <article class="project-card{{ if eq $i 0 }} project-card--featured{{ end }}" data-reveal data-reveal-delay="{{ mul $i 100 }}">
+            {{- if $cover }}
+            <a href="{{ $p.Permalink }}" class="project-card-image" tabindex="-1" aria-hidden="true">
+                {{- $img := $cover.Resize "800x450 q85 Lanczos" }}
+                <img src="{{ $img.RelPermalink }}" alt="{{ $p.Params.cover.alt | default $p.Title }}" loading="lazy" width="{{ $img.Width }}" height="{{ $img.Height }}">
+            </a>
+            {{- else }}
+            <a href="{{ $p.Permalink }}" class="project-card-image project-card-image--placeholder" tabindex="-1" aria-hidden="true">
+                <div class="project-card-placeholder">
+                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40" aria-hidden="true">
+                        <rect x="8" y="8" width="44" height="44" rx="4" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+                        <path d="M20 40 L30 28 L40 36 L45 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="40" cy="24" r="4" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </div>
+            </a>
+            {{- end }}
+            <div class="project-card-body">
+                <div class="project-card-meta">
+                    {{- $tags := $p.Params.tags | default slice }}
+                    {{- $techTags := slice }}
+                    {{- range $tags }}
+                        {{- if not (in (slice "Project" "Blog") .) }}
+                            {{- $techTags = $techTags | append . }}
+                        {{- end }}
+                    {{- end }}
+                    {{- range first 4 $techTags }}
+                    <span class="tech-tag">{{ . }}</span>
+                    {{- end }}
+                </div>
+                <h3 class="project-card-title">
+                    <a href="{{ $p.Permalink }}">{{ $p.Title }}</a>
+                </h3>
+                <p class="project-card-description">{{ $p.Params.summary | default $p.Params.description | truncate 140 }}</p>
+                <div class="project-card-footer">
+                    <a href="{{ $p.Permalink }}" class="project-card-link">View project →</a>
+                    {{- with $p.Params.editPost.URL }}
+                    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="project-card-github" aria-label="GitHub repository">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    {{- end }}
+                </div>
+            </div>
+        </article>
+        {{- end }}
+    </div>
+</section>
+
+{{- /* ════════════════════════════════════════════════════════════════════════
+     FEATURED WRITING
+     ════════════════════════════════════════════════════════════════════════ */}}
+<section class="home-section home-writing" aria-labelledby="writing-heading">
+    <header class="home-section-header">
+        <p class="section-label">Technical Writing</p>
+        <h2 id="writing-heading" class="home-section-title">Selected Articles</h2>
+        <a href="/blog/" class="section-link">All articles →</a>
+    </header>
+
+    {{- $posts := where site.RegularPages "Section" "blog" }}
+    {{- $posts = $posts.ByDate.Reverse }}
+    {{- /* Show top 4 posts by date */}}
+
+    <div class="writing-list">
+        {{- range first 4 $posts }}
+        <article class="writing-entry" data-reveal>
+            <div class="writing-entry-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}" class="writing-date">{{ .Date.Format "Jan 2006" }}</time>
+                {{- with .Params.tags }}
+                {{- range first 2 . }}
+                {{- if not (in (slice "Blog" "Project") .) }}
+                <span class="writing-tag">{{ . }}</span>
+                {{- end }}
+                {{- end }}
+                {{- end }}
+            </div>
+            <div class="writing-entry-body">
+                <h3 class="writing-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p class="writing-summary">{{ .Params.description | truncate 160 }}</p>
+            </div>
+            <a href="{{ .Permalink }}" class="writing-arrow" aria-hidden="true">→</a>
+        </article>
+        {{- end }}
+    </div>
+</section>
+
+{{- /* ════════════════════════════════════════════════════════════════════════
+     CURRENT FOCUS & LEADERSHIP
+     ════════════════════════════════════════════════════════════════════════ */}}
+<section class="home-section home-focus" aria-labelledby="focus-heading">
+    <div class="focus-grid" data-reveal>
+        <div class="focus-block">
+            <p class="section-label">Current Focus</p>
+            <h2 id="focus-heading" class="home-section-title">What I'm Working On</h2>
+            <ul class="focus-list">
+                <li>
+                    <span class="focus-icon">⬡</span>
+                    <div>
+                        <strong>XII Engine</strong> — Advancing a cross-platform C++23 real-time engine covering rendering, physics, scripting, and editor tooling across Windows, Linux, macOS, Android, and iOS.
+                    </div>
+                </li>
+                <li>
+                    <span class="focus-icon">⬡</span>
+                    <div>
+                        <strong>GPU Simulation</strong> — Exploring GPU-accelerated molecular dynamics and microrobot swarm control architectures for biomedical applications.
+                    </div>
+                </li>
+                <li>
+                    <span class="focus-icon">⬡</span>
+                    <div>
+                        <strong>Robotics Frameworks</strong> — Researching deterministic execution models and real-time scheduling for safety-critical robot control systems.
+                    </div>
+                </li>
+                <li>
+                    <span class="focus-icon">⬡</span>
+                    <div>
+                        <strong>Theoretical CS</strong> — Studying formal semantics, type theory, and computational geometry with applications in compiler design and graphics.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="focus-block">
+            <p class="section-label">Leadership</p>
+            <h2 class="home-section-title">Organizational Roles</h2>
+            <div class="leadership-cards">
+                <div class="leadership-card">
+                    <div class="leadership-card-year">2026 – 2027</div>
+                    <div class="leadership-card-role">President</div>
+                    <div class="leadership-card-org">AI Club, University of Calgary</div>
+                    <p class="leadership-card-desc">Leading the club's technical direction, workshop programming, and industry engagement for 2026–2027.</p>
+                </div>
+                <div class="leadership-card">
+                    <div class="leadership-card-year">Current</div>
+                    <div class="leadership-card-role">Chair</div>
+                    <div class="leadership-card-org">IEEE Student Branch, University of Calgary</div>
+                    <p class="leadership-card-desc">Organizing professional development events and technical workshops for the university's IEEE chapter.</p>
+                </div>
+                <a href="/leadership/" class="leadership-more">Full leadership record →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{- /* ════════════════════════════════════════════════════════════════════════
+     CONTACT CTA
+     ════════════════════════════════════════════════════════════════════════ */}}
+<section class="home-section home-contact" aria-labelledby="contact-heading">
+    <div class="contact-cta" data-reveal>
+        <div class="contact-cta-content">
+            <p class="section-label">Get in Touch</p>
+            <h2 id="contact-heading" class="contact-cta-title">Open to collaboration</h2>
+            <p class="contact-cta-body">
+                I'm interested in challenging engineering problems, research collaborations,
+                and opportunities where technical depth matters. If you're working on
+                something interesting, I'd like to hear about it.
+            </p>
+            <div class="contact-cta-actions">
+                <a href="mailto:theophiluse@xiitechnologies.com" class="btn-primary">Send an email</a>
+                <a href="/contact/" class="btn-secondary">Contact page</a>
+            </div>
+        </div>
+        <div class="contact-social" aria-label="Social links">
+            {{- range site.Params.socialIcons }}
+            <a href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer" title="{{ .name }}" aria-label="{{ .name }}" class="contact-social-link">
+                {{ partial "svg.html" . }}
+            </a>
+            {{- end }}
+        </div>
+    </div>
+</section>
+
+{{- end }}{{/* end main */}}
+

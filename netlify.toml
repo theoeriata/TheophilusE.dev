@@ -1,18 +1,18 @@
-[build]
+﻿[build]
   publish = "public"
   command = "hugo --gc --minify --baseURL $URL"
-  environment = { HUGO_VERSION = "0.161.1", HUGO_ENV = "production", HUGO_ENABLEGITINFO = "true" }
+  environment = { HUGO_VERSION = "0.164.0", HUGO_ENV = "production", HUGO_ENABLEGITINFO = "true" }
 
 [context.production.environment]
-  HUGO_VERSION = "0.161.1"
+  HUGO_VERSION = "0.164.0"
   NODE_ENV = "production"
 
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.161.1"
+  HUGO_VERSION = "0.164.0"
   NODE_ENV = "development"
 
 [context.branch-deploy.environment]
-  HUGO_VERSION = "0.161.1"
+  HUGO_VERSION = "0.164.0"
   NODE_ENV = "development"
 
 [build.processing]
@@ -43,3 +43,4 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Content-Security-Policy = "frame-ancestors 'none'"
+

@@ -1,0 +1,20 @@
+{{- /* schema_json.html — minimal safe structured data
+     Full schema disabled due to non-ASCII content in page bodies.
+     Basic WebSite and Person schema only. */}}
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Title | jsonify }},
+  "url": {{ site.Home.Permalink | jsonify }},
+  "description": {{ site.Params.description | plainify | truncate 180 | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ site.Params.author | jsonify }},
+    "url": {{ site.Home.Permalink | jsonify }}
+  }
+}
+</script>
+{{- end -}}
+

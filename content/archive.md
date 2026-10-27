@@ -1,5 +1,5 @@
 ---
 title: "Archive"
-description: "Browse the complete collection of books, learning materials, and datasets—presented in reverse chronological order."
+description: "Browse the complete collection of articles and projects in reverse chronological order."
 layout: "archives"
 ---

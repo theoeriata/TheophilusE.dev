@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# Site Configuration for Theophilus Eriata
+# Site Configuration — Theophilus Eriata
 # -----------------------------------------------------------------------------
 
 baseURL: "/"
@@ -18,30 +18,27 @@ taxonomies:
 
 menu:
   main:
-    - name: Home
-      url: "/"
+    - name: Work
+      url: "/projects/"
       weight: 1
+    - name: Writing
+      url: "/blog/"
+      weight: 2
     - name: About
       url: "/about/"
-      weight: 2
+      weight: 3
     - name: Leadership
       url: "/leadership/"
-      weight: 3
-    - name: Projects
-      url: "/projects/"
       weight: 4
-    - name: Blog
-      url: "/blog/"
-      weight: 5
     - name: Contact
       url: "/contact/"
-      weight: 6
+      weight: 5
 
 params:
   author: "Theophilus Eriata"
-  description: "Undergraduate Computer Science (Honours) student at University of Calgary, specializing in Graphics, Robotics, AI/ML, and Real-Time Systems."
+  description: "Software engineer working at the intersection of graphics programming, real-time simulation, robotics, and AI — University of Calgary."
   googleAnalyticsID: "G-PVVE70X9RZ"
-  DateFormat: "2006-01-02"
+  DateFormat: "January 2, 2006"
 
   defaultTheme: "light"
   disableThemeToggle: false
@@ -50,69 +47,46 @@ params:
   ShowShareButtons: false
   ShowReadingTime: true
   disableSpecial1stPost: true
-  disableAnchoredHeadings: true
+  disableAnchoredHeadings: false
   disableScrollToTop: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
-  ShowToc: false
+  ShowToc: true
+  TocOpen: false
+  UseHugoToc: true
   ShowWordCount: false
   ShowAllPagesInArchive: false
 
   math: true
   comments: false
-  TocOpen: true
-  UseHugoToc: true
 
-  MainSections: ["about","leadership","projects","blog","contact"]
+  # MainSections controls what appears in Archive and RSS
+  MainSections: ["blog", "projects"]
 
+  # profileMode disabled — we use a custom layouts/index.html instead
   profileMode:
-    enabled: true
-    title: "Theophilus Eriata"
-    subtitle: "A theoretical Computer Scientist and multidisciplinary engineer with experience spanning graphics programming, embedded systems, compilers, robotics, and full-stack development. I build high-performance software, real-time rendering engines, and robotics frameworks, from low-level optimization to large-scale application design. I bring technical precision, creative problem-solving, and collaborative leadership to every project I take on."
-    imageUrl: "images/avatars/theophiluse.jpg"
-    imageWidth: 160
-    imageHeight: 160
-    buttons:
-      - name: About Me
-        url: /about/
-      - name: Leadership
-        url: /leadership/
-      - name: Projects
-        url: /projects/
-      - name: Blog
-        url: "/blog/"
-      - name: Contact
-        url: "/contact/"
-      # - name: Tags
-      #   url: tags/
-      - name: Archive
-        url: /archive/
+    enabled: false
 
   socialIcons:
     - name: Email
       url: "mailto:theophiluse@xiitechnologies.com"
     - name: GitHub
       url: "https://github.com/theoeriata"
-    # - name: GitLab
-    #   url: "https://gitlab.com/theoeriata"
     - name: LinkedIn
       url: "https://linkedin.com/in/theophilus-eriata"
     - name: YouTube
       url: "https://www.youtube.com/@TheophilusEriata"
     - name: X
       url: "https://x.com/theoeriata"
-    # - name: Itch.io
-    #   url: https://theophiluse.itch.io
-    # - name: Google Scholar
-    #   url: https://scholar.google.com/citations?user=Theophilus+Eriata
 
   assets:
     disableScrollBarStyle: false
+    disableFingerprinting: false
 
   cover:
     hiddenInList: false
-    hiddenInSingle: true
+    hiddenInSingle: false
 
   label:
     text: "Theophilus Eriata"
@@ -125,8 +99,9 @@ markup:
       unsafe: true
   highlight:
     guessSyntax: true
-    style: "autumn"
+    style: "github-dark"
+    noClasses: true
   tableOfContents:
     startLevel: 2
-    endLevel: 2
+    endLevel: 3
     ordered: false

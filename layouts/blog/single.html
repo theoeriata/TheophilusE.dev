@@ -1,0 +1,68 @@
+{{- define "main" }}
+
+{{- /* Reading progress bar for long-form articles */}}
+<div id="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+<article class="post-single">
+    <header class="post-header">
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+            <a href="/blog/">Writing</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page" class="breadcrumb-current">{{ .Title | truncate 40 }}</span>
+        </nav>
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{- with .Params.description }}
+        <p class="post-description">{{ . }}</p>
+        {{- end }}
+        {{- if not (.Param "hideMeta") }}
+        <div class="post-meta">
+            {{- partial "post_meta.html" . -}}
+            {{- partial "edit_post.html" . -}}
+        </div>
+        {{- end }}
+    </header>
+
+    {{- /* Cover */}}
+    {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
+    {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
+
+    {{- /* TOC */}}
+    {{- if (.Param "ShowToc") }}
+    {{- partial "toc.html" . }}
+    {{- end }}
+
+    {{- /* Article body */}}
+    {{- if .Content }}
+    <div class="post-content">
+        {{- if not (.Param "disableAnchoredHeadings") }}
+        {{- partial "anchored_headings.html" .Content -}}
+        {{- else }}{{ .Content }}{{ end }}
+    </div>
+    {{- end }}
+
+    <footer class="post-footer">
+        {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+        {{- with ($.GetTerms $tags) }}
+        <ul class="post-tags" aria-label="Tags">
+            {{- range . }}
+            <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+            {{- end }}
+        </ul>
+        {{- end }}
+
+        {{- if (.Param "ShowPostNavLinks") }}
+        {{- partial "post_nav_links.html" . }}
+        {{- end }}
+
+        {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+        {{- partial "share_icons.html" . -}}
+        {{- end }}
+    </footer>
+
+    {{- if (.Param "comments") }}
+    {{- partial "comments.html" . }}
+    {{- end }}
+</article>
+
+{{- end }}{{/* end main */}}
+

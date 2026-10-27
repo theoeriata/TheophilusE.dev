@@ -1,49 +1,108 @@
+/* =============================================================================
+   Design Tokens — TheophilusE.dev
+   Sophisticated neutral palette with engineering-blue accent.
+   ============================================================================= */
+
 :root {
+    /* ── Layout ── */
     --gap: 24px;
     --content-gap: 20px;
-    --nav-width: 1024px;
-    --main-width: 720px;
-    --header-height: 44px;
-    --footer-height: 70px;
-    --radius: 8px;
-    --theme: rgb(255, 255, 255);
-    --entry: rgb(255, 255, 255);
-    --primary: rgb(30, 30, 30);
-    --secondary: rgb(108, 108, 108);
-    --tertiary: rgb(214, 214, 214);
-    --gray: rgb(165, 165, 165);
-    --content: rgb(30, 30, 30);
-    --code-block-bg: rgb(28, 29, 33);
-    --code-bg: rgb(245, 245, 245);
-    --border: rgb(238, 238, 238);
-    --darkcolor: #6a7ba2;
-    --lightcolor: #cbd1de;
+    --nav-width: 1200px;
+    --main-width: 740px;
+    --header-height: 56px;
+    --footer-height: 80px;
+    --radius: 6px;
+    --radius-sm: 3px;
+    --radius-lg: 12px;
+
+    /* ── Base Palette (Light) ── */
+    --theme: #ffffff;
+    --entry: #ffffff;
+    --surface: #f8f8f9;
+    --surface-raised: #f2f3f5;
+
+    --primary: #0f0f10;
+    --secondary: #6b6e7a;
+    --tertiary: #d8dae0;
+    --gray: #a0a3ad;
+    --content: #1a1b1f;
+
+    /* ── Accent ── */
+    --accent: #4f6ef2;
+    --accent-hover: #3d5ae0;
+    --accent-muted: rgba(79, 110, 242, 0.10);
+    --accent-border: rgba(79, 110, 242, 0.25);
+
+    /* Legacy compat aliases */
+    --darkcolor: #4f6ef2;
+    --lightcolor: #dde4fd;
+
+    /* ── Code ── */
+    --code-block-bg: #16171c;
+    --code-bg: #f2f3f5;
+    --border: #e8e9ed;
+
+    /* ── Typography Scale ── */
+    --font-sans: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", Consolas,
+        "Courier New", monospace;
+
     --semibold: 500;
     --homesize: 16px;
-    --textsize: 18px;
-    --h1size: 25px;
-    --entrysize: 15px;
-    --headersize: 16px;
+    --textsize: 17px;
+    --h1size: 28px;
+    --entrysize: 14px;
+    --headersize: 14px;
     --footersize: 13px;
-    --lineheight: 1.45;
+    --lineheight: 1.75;
     --lineclamp: 8;
     --marginleft: 26px;
+
+    /* ── Shadows ── */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-lg: 0 12px 32px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.04);
+
+    /* ── Transitions ── */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.25s ease;
+    --transition-slow: 0.4s ease;
 }
 
+/* ── Dark Mode ── */
 .dark {
-    --theme: rgb(29, 30, 32);
-    --entry: rgb(46, 46, 51);
-    --primary: rgb(218, 218, 219);
-    --secondary: rgb(155, 156, 157);
-    --tertiary: rgb(65, 66, 68);
-    --content: rgb(196, 196, 197);
-    --code-block-bg: rgb(46, 46, 51);
-    --code-bg: rgb(55, 56, 62);
-    --border: rgb(51, 51, 51);
+    --theme: #0e0f11;
+    --entry: #161719;
+    --surface: #131416;
+    --surface-raised: #1c1d20;
+
+    --primary: #e8e9ec;
+    --secondary: #8b8e9a;
+    --tertiary: #2e3039;
+    --gray: #5a5e6b;
+    --content: #cccdd4;
+
+    --accent: #6b84f5;
+    --accent-hover: #8099f7;
+    --accent-muted: rgba(107, 132, 245, 0.12);
+    --accent-border: rgba(107, 132, 245, 0.28);
+
+    --darkcolor: #6b84f5;
+    --lightcolor: #1e2745;
+
+    --code-block-bg: #13141a;
+    --code-bg: #1c1d22;
+    --border: #252630;
+
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.20), 0 1px 2px rgba(0,0,0,0.14);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.28), 0 2px 4px rgba(0,0,0,0.14);
+    --shadow-lg: 0 12px 32px rgba(0,0,0,0.40), 0 4px 8px rgba(0,0,0,0.14);
 }
 
+/* ── List/section pages background ── */
 .list {
-    background: var(--code-bg);
+    background: var(--surface);
 }
 
 .dark.list {

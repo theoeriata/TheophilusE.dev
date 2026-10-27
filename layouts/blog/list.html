@@ -1,0 +1,68 @@
+{{- define "main" }}
+
+<div class="blog-page">
+    <header class="page-header">
+        <p class="section-label">Technical Writing</p>
+        <h1>Writing</h1>
+        <p class="page-description">
+            Technical articles on graphics programming, robotics, AI, formal
+            methods, and engineering practice.
+        </p>
+    </header>
+
+    {{- $posts := where site.RegularPages "Section" "blog" }}
+    {{- $posts = $posts.ByDate.Reverse }}
+    {{- $paginator := .Paginate $posts }}
+
+    <div class="blog-list">
+        {{- range $paginator.Pages }}
+        {{- $cover := .Resources.GetMatch "*.jpg" }}
+        {{- if not $cover }}{{- $cover = .Resources.GetMatch "*.png" }}{{- end }}
+        {{- if not $cover }}{{- $cover = .Resources.GetMatch "*.webp" }}{{- end }}
+
+        <article class="blog-entry">
+            {{- if $cover }}
+            <a href="{{ .Permalink }}" class="blog-entry-image" tabindex="-1" aria-hidden="true">
+                {{- $img := $cover.Resize "640x360 q80 Lanczos" }}
+                <img src="{{ $img.RelPermalink }}" alt="{{ .Params.cover.alt | default .Title }}" loading="lazy" width="{{ $img.Width }}" height="{{ $img.Height }}">
+            </a>
+            {{- end }}
+            <div class="blog-entry-body">
+                <div class="blog-entry-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}" class="writing-date">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{- if .Params.tags }}
+                    {{- range first 2 .Params.tags }}
+                    {{- if not (in (slice "Blog" "Project") .) }}
+                    <span class="writing-tag">{{ . }}</span>
+                    {{- end }}
+                    {{- end }}
+                    {{- end }}
+                    {{- if site.Params.ShowReadingTime }}
+                    <span class="blog-reading-time">{{ .ReadingTime }} min read</span>
+                    {{- end }}
+                </div>
+                <h2 class="blog-entry-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                <p class="blog-entry-summary">{{ .Params.description | default (.Summary | plainify | htmlUnescape) | truncate 200 }}</p>
+                <a href="{{ .Permalink }}" class="blog-entry-link">Read article →</a>
+            </div>
+        </article>
+        {{- end }}
+    </div>
+
+    {{- if gt $paginator.TotalPages 1 }}
+    <footer class="page-footer">
+        <nav class="pagination" aria-label="Blog pagination">
+            {{- if $paginator.HasPrev }}
+            <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">← Newer</a>
+            {{- end }}
+            <span class="pagination-info">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+            {{- if $paginator.HasNext }}
+            <a class="next" href="{{ $paginator.Next.URL | absURL }}">Older →</a>
+            {{- end }}
+        </nav>
+    </footer>
+    {{- end }}
+</div>
+
+{{- end }}{{/* end main */}}
+

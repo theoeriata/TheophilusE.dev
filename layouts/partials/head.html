@@ -153,3 +153,15 @@
 {{- partial "math.html" .}}
 {{ end }} 
 
+
+{{- /* Site interactions: scroll reveal, code copy, reading progress, theme transition */}}
+{{- $interactionsRes := resources.Get "js/interactions.js" }}
+{{- if $interactionsRes }}
+{{- $interactions := $interactionsRes | resources.Minify }}
+{{- if not site.Params.assets.disableFingerprinting }}
+{{- $interactions = $interactions | fingerprint }}
+<script defer crossorigin="anonymous" src="{{ $interactions.RelPermalink }}" integrity="{{ $interactions.Data.Integrity }}"></script>
+{{- else }}
+<script defer crossorigin="anonymous" src="{{ $interactions.RelPermalink }}"></script>
+{{- end }}
+{{- end }}

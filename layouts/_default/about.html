@@ -1,0 +1,56 @@
+{{- define "main" }}
+
+<article class="about-page post-single">
+    <header class="about-header">
+        <p class="section-label">Background</p>
+        <h1 class="about-title">Theophilus Eriata</h1>
+        <p class="about-subtitle">Software engineer. Researcher. Builder of systems where precision matters.</p>
+
+        {{- /* Social links */}}
+        <div class="about-social" aria-label="Social links">
+            {{- range site.Params.socialIcons }}
+            <a href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer"
+               title="{{ .name }}" aria-label="{{ .name }}" class="about-social-link">
+                {{ partial "svg.html" . }}
+                <span>{{ .name }}</span>
+            </a>
+            {{- end }}
+        </div>
+    </header>
+
+    {{- if .Content }}
+    <div class="post-content about-content">
+        {{ .Content }}
+    </div>
+    {{- end }}
+
+    {{- /* Skills / expertise areas */}}
+    <aside class="about-expertise">
+        <h2 class="about-expertise-title">Technical Focus</h2>
+        <div class="expertise-grid">
+            <div class="expertise-item">
+                <div class="expertise-icon">⬡</div>
+                <h3>Graphics &amp; Rendering</h3>
+                <p>Real-time rendering pipelines, ray tracing, GPU programming, computational geometry, and engine architecture.</p>
+            </div>
+            <div class="expertise-item">
+                <div class="expertise-icon">⬡</div>
+                <h3>Robotics &amp; Control</h3>
+                <p>Deterministic control systems, real-time scheduling, sensor fusion, pose estimation, and FIRST Tech Challenge.</p>
+            </div>
+            <div class="expertise-item">
+                <div class="expertise-icon">⬡</div>
+                <h3>AI &amp; Simulation</h3>
+                <p>Reinforcement learning, GPU-accelerated simulation, swarm intelligence, and machine learning systems.</p>
+            </div>
+            <div class="expertise-item">
+                <div class="expertise-icon">⬡</div>
+                <h3>Systems Engineering</h3>
+                <p>C++23, cross-platform development, compiler internals, performance optimization, and embedded systems.</p>
+            </div>
+        </div>
+    </aside>
+</article>
+
+{{- end }}{{/* end main */}}
+

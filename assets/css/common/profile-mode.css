@@ -1,50 +1,6 @@
-.buttons,
-.main .profile {
-    display: flex;
-    justify-content: center; /* center instead of left */
-}
+/* Profile mode CSS — kept minimal since we override with index.html */
+/* The extended/design-system.css handles .profile, .buttons, .button */
 
-.main .profile {
-    align-items: center;
-    flex-direction: column;
-    min-height: calc(100vh - var(--footer-height) - (var(--gap) * 2));
-    font-size: var(--homesize);
-    line-height: var(--lineheight);
-    padding: var(--gap);
-    text-align: center; /* optional, for better heading alignment */
-}
-
-.profile .profile_inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* center content inside profile_inner */
-    gap: 10px;
-}
-
-.profile .profile_inner h1 {
-    font-size: 2.5rem;
-}
-
-.profile img {
-    border-radius: 50%;
-    border: 1px solid var(--tertiary);
-}
-
-.buttons {
-    flex-wrap: wrap;
-}
-
-.button {
-    background: var(--tertiary);
-    border-radius: var(--radius);
-    margin: 6px 12px 6px 0px;
-    padding: 10px;
-}
-
-.button-inner {
-    padding: 0 8px;
-}
-
-.button:hover {
-    background: var(--lightcolor);
+.home-info .entry-content {
+    -webkit-line-clamp: unset;
 }
