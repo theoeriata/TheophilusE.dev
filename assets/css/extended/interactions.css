@@ -62,19 +62,6 @@
 }
 
 /* =============================================================================
-   SMOOTH THEME TRANSITION
-   During toggle, suppress color transitions that would flash.
-   ========================================================= */
-
-body.theme-transitioning,
-body.theme-transitioning * {
-  transition:
-    background-color 0.35s ease,
-    color 0.25s ease,
-    border-color 0.25s ease !important;
-}
-
-/* =============================================================================
    SCROLL TO TOP BUTTON
    ============================================================================= */
 

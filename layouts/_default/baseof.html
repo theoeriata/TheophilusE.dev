@@ -16,10 +16,10 @@
 {{- if eq site.Params.defaultTheme `dark` -}}
 {{- print " dark" }}
 {{- end -}}
-" id="top">
+" id="top" data-code-copy="{{ .Param "ShowCodeCopyButtons" }}">
     <a class="skip-link" href="#main-content">Skip to content</a>
     {{- partialCached "header.html" . .Page -}}
-    <main class="main" id="main-content">
+    <main class="main" id="main-content" tabindex="-1">
         {{- block "main" . }}{{ end }}
     </main>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
