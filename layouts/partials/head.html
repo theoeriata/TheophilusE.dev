@@ -139,7 +139,7 @@
 {{- partial "analytics.html" . }}
 {{ end }}
 
-{{ if or .Page.Params.math .Site.Params.math }}
+{{ if and .IsPage (or .Params.math (and site.Params.math (in site.Params.mainSections .Section))) }}
 {{- partial "math.html" .}}
 {{ end }} 
 
@@ -155,3 +155,8 @@
 <script defer crossorigin="anonymous" src="{{ $interactions.RelPermalink }}"></script>
 {{- end }}
 {{- end }}
+
+{{ if .HasShortcode "gallery" }}
+{{ $gallery := resources.Get "js/gallery.js" | resources.Minify | fingerprint }}
+<script defer src="{{ $gallery.RelPermalink }}" integrity="{{ $gallery.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ end }}

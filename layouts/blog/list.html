@@ -16,15 +16,10 @@
 
     <div class="blog-list">
         {{- range $paginator.Pages }}
-        {{- $cover := .Resources.GetMatch "*.jpg" }}
-        {{- if not $cover }}{{- $cover = .Resources.GetMatch "*.png" }}{{- end }}
-        {{- if not $cover }}{{- $cover = .Resources.GetMatch "*.webp" }}{{- end }}
-
         <article class="blog-entry">
-            {{- if $cover }}
-            <a href="{{ .Permalink }}" class="blog-entry-image" tabindex="-1" aria-hidden="true">
-                {{- $img := $cover.Resize "640x360 q80 Lanczos" }}
-                <img src="{{ $img.RelPermalink }}" alt="{{ .Params.cover.alt | default .Title }}" loading="lazy" width="{{ $img.Width }}" height="{{ $img.Height }}">
+            {{- if partial "page-image.html" . }}
+            <a href="{{ .RelPermalink }}" class="blog-entry-image" tabindex="-1" aria-hidden="true">
+                {{ partial "responsive-image.html" (dict "page" . "decorative" true "sizes" "(min-width: 720px) 240px, 100vw") }}
             </a>
             {{- end }}
             <div class="blog-entry-body">
