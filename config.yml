@@ -2,7 +2,7 @@
 # Site Configuration — Theophilus Eriata
 # -----------------------------------------------------------------------------
 
-baseURL: "/"
+baseURL: "https://theophiluse.xiitechnologies.com/"
 locale: "en-us"
 title: "Theophilus Eriata"
 theme: ["PaperMod", "hugo-shortcode-gallery"]
@@ -105,3 +105,6 @@ markup:
     startLevel: 2
     endLevel: 3
     ordered: false
+
+outputs:
+  home: [HTML, RSS, JSON]
