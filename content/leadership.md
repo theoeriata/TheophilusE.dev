@@ -1,61 +1,108 @@
 ---
 title: "Leadership"
-description: "Technical communities, robotics mentorship, and service at the University of Calgary and beyond."
+description: "A timeline of leadership in technology, education, mentorship, and community service."
 layout: "leadership"
 hideMeta: true
 ---
 
-I believe leadership is best measured by the opportunities I create for others. Alongside engineering, I've worked in student organizations, robotics mentorship, healthcare volunteering, and community service.
+Leadership has been a continuous part of my journey, from mentoring students in robotics and serving local communities to building technical organizations and creating opportunities for others.
 
-## Technical communities
+My work spans student governance, artificial intelligence, engineering education, entrepreneurship, and volunteer service. Across these roles, I've focused on translating ideas into initiatives that bring people together and produce meaningful outcomes.
 
-### President · AI Club, University of Calgary
-**2026–2027**
+## Leadership timeline
 
-My current role brings together my interests in AI, technical education, and building a community where students can explore the field together.
+### 2026 – Present
 
-### Chair · IEEE Student Branch, University of Calgary
-**Current**
+#### President · [Artificial Intelligence Club, University of Calgary](https://aicucalgary.ca)
 
-Supporting the university's community of students in engineering and technology.
+**June 2026 – Present**
 
-### Vice President, Academic & Workshop Executive · AI Club
-**Previous role · University of Calgary**
+Leading the club's strategic direction, organizational development, and academic programming, with an emphasis on advancing student-led research, technical education, and collaboration across disciplines.
 
-Facilitated workshops on AI theory and applications in computational chemistry and robotics, using participant feedback to improve the workshops.
+My responsibilities include overseeing executive operations, coordinating research and engineering initiatives such as OMEGA, developing industry and faculty partnerships, and organizing technical workshops, interdisciplinary events, and professional development opportunities.
 
-### District Committee Chair & Senior VP · Rotary and Rotaract
-**Previous roles · Rotary District 5360 & Rotaract UCalgary**
 
-Coordinated initiatives across Rotaract clubs and contributed to strategic planning for community activities.
+#### Co-Founder · [Eudaimonia](https://eudaimoniayyc.vercel.app)
+**2026 – Present · Calgary, Alberta**
 
-## Mentorship and education
+Co-founded a community focused on bringing together founders, engineers, and innovators through technical events, collaboration, and entrepreneurial initiatives.
 
-### FIRST Robotics Mentor · Calgary Board of Education
-**2022–2023**
+- Helped organize a hackathon attracting over **200 participants**.
+- Co-organized a founders' fireside chat during Calgary Innovation Week, with **53 registrations and 35 attendees**.
+- Supported technical workshops, coworking sessions, and opportunities connecting Calgary's entrepreneurial and engineering communities.
 
-Mentored a new all-girls FIRST Tech Challenge team through mathematics, computer science, and programming. Workshops covered linear algebra, control theory, colour spaces, trigonometry, and collaborative software development.
+### 2025 – Present
+
+#### Chair · [Institute of Electrical and Electronics Engineers (IEEE) Student Branch, University of Calgary](https://southern-alberta.ieeecanada.org)
+**September 2025 – Present**
+
+Overseeing branch operations, governance, technical programming, and external engagement, with an emphasis on strengthening opportunities for engineering students.
+
+My responsibilities include coordinating executive teams, managing organizational priorities, developing partnerships, and organizing technical workshops, industry engagement activities, and student events.
+
+### 2025 – 2026
+
+#### Vice President, Academic & Workshop Executive · [Artificial Intelligence Club, University of Calgary](https://aicucalgary.ca)
+**January 2025 – June 2026**
+
+Helped develop and deliver technical workshops introducing students to artificial intelligence, mathematical foundations, and applications in robotics and computational chemistry.
+
+Worked on workshop content, instructional delivery, and improvements informed by participant feedback. This experience laid the groundwork for my subsequent leadership of the club.
+
+### 2023 – 2026
+
+#### District Committee Chair · [Rotary International, District 5360](https://rotary5360.ca)
+**September 2023 – March 2026**
+
+Coordinated cross-club collaboration, community initiatives, and youth leadership development within the Rotary and Rotaract network.
+
+Contributed to the planning and coordination of service activities, supporting cooperation between student leaders and community organizations.
+
+### 2023 – 2025
+
+#### Emergency, Patient Support & Site Wayfinder · [Alberta Health Services](https://www.albertahealthservices.ca)
+**July 2023 – October 2025**
+
+Supported hospital operations by assisting patients, visitors, and healthcare personnel with wayfinding, patient support, and access to hospital services, contributing to a more accessible and efficient healthcare environment.
+
+My responsibilities included providing directions to clinical departments, helping patients and visitors navigate hospital facilities, responding to inquiries, and coordinating with hospital staff to address individual needs. Over the course of my service, I assisted an estimated **2,045** patients, visitors, and staff.
+
+### 2024
+
+#### Shelter Helper · [The Mustard Seed](https://www.theseed.ca)
+**April – December 2024**
+
+Supported shelter operations and the delivery of essential services to individuals experiencing homelessness and housing insecurity, contributing to a safe, organized, and welcoming environment.
+
+My responsibilities included distributing clothing, hygiene products, and other essential supplies, managing residents' access to personal storage lockers, and assisting with daily shelter operations to ensure services were delivered efficiently and respectfully.
+
+### 2022 – 2023
+
+#### FIRST Robotics Mentor · Calgary Board of Education
+**2022 – 2023**
+
+Mentored **FIRST Tech Challenge Team 21595,** a newly established, women-led robotics team, providing technical guidance and supporting students in developing the engineering, mathematical, and programming skills necessary for robotics competitions.
+
+My responsibilities included designing and delivering technical workshops covering linear algebra, control theory, trigonometry, colour spaces, and software development. I also guided students through practical robotics challenges, emphasizing computational problem-solving, collaborative engineering, and the application of theoretical concepts to real-world systems.
+
+Through this experience, I contributed to making advanced engineering concepts more accessible while encouraging greater participation and confidence among young women pursuing STEM.
 
 [Read about the mentoring experience](/blog/ftc-robotics-mentoring/).
 
+## Additional community involvement
+
+### Senior Vice President · Rotaract UCalgary
+
+Contributed to organizational leadership, service planning, and community engagement through the university's Rotaract network.
+
 ### Children's Ministry Teacher · Winner's Chapel International Calgary
 
-Teaching and guiding children through interactive activities grounded in faith and values.
+Teaching children through interactive lessons, discussions, and activities centered on faith, personal development, and community values.
 
-## Volunteer service
+## Continuing the work
 
-### Emergency, Patient Support & Site Wayfinder · Alberta Health Services
+Across these experiences, my responsibilities have evolved from individual mentorship and direct community service toward developing programs, leading teams, and creating opportunities at a larger scale.
 
-Provided directions and assistance to patients, visitors, and staff, communicating with people from a wide range of backgrounds in a hospital setting.
+The common thread remains the same: using leadership to make technical education, professional opportunities, and community participation more accessible to others.
 
-### Shelter Helper · The Mustard Seed
-
-Helped distribute clothing and hygiene products and managed access to residents' personal lockers.
-
-## A record of service
-
-My personal records and estimates include **2,045 patients and staff helped**, a **30% reduction in wayfinding queries**, **62 students mentored**, **24 volunteers mobilized**, **200 items distributed**, and **$24K raised** across these activities.
-
-These figures are self-reported estimates. Roles and affiliations do not constitute official statements or endorsements by the organizations.
-
-[Get in touch](/contact/) about technical workshops, mentorship, or community collaboration.
+[Get in touch](/contact/) about technical collaboration, mentorship, partnerships, or community initiatives.
